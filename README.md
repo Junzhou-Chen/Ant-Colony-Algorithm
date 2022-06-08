@@ -25,8 +25,8 @@ YouTube：[【数之道 04】解决最优路径问题的妙招-蚁群ACO算法](
 3. 蚂蚁会在其走过的路上释放弗洛蒙（信息素）
 
 之后建立函数 $P_{ij}^k$ 表示第k只蚂蚁从状态 $i$ 转移至状态 $j$ 的概率
-公式如下：
-<font size=5>$P_{ij}^k=\frac {(\tau _{ij}^\alpha)(\eta_{ij}^\beta)}{\sum_{z\epsilon allowedx }(\tau _{ij}^\alpha)(\eta_{ij}^\beta)}$</font> 
+公式如下： 
+ $P_{ij}^k=\frac {(\tau _{ij}^\alpha)(\eta_{ij}^\beta)}{\sum_{z\epsilon allowedx }(\tau_{ij}^\alpha)(\eta_{ij}^\beta)}$ 
 其中<font size=4>$\tau_{ij}$</font>为弗洛蒙浓度，<font size=4>$\eta_{ij}$</font>为距离 
 * 其弗洛蒙浓度计算公式：
 <font size=4>$\tau_{ij}(t+1)=\rho*\tau_{ij}(t)+\triangle\tau_{ij}$</font>
@@ -47,13 +47,13 @@ YouTube：[【数之道 04】解决最优路径问题的妙招-蚁群ACO算法](
 所以一般在使用蚁群算法时，我们要设定合适的<font size=4>$\alpha,\beta,\eta,\tau,Q$</font>去获得很好的解
 
 # 代码实现
-此次实验以下图进行示例演示（哈哈，其实是因为课程要求是这个，偷个懒）
+此次实验以下图进行示例演示（哈哈，其实是因为课程要求是这个，偷个懒） 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/5b556f662c504edeb694618fc5e02d34.png )
-自行下载，这里我对各别部分进行说明，其余地方注释详尽，自行查看即可
-其中utils.py为可视化方法文件，主要打印程序运行时间、结果等文字，同时现实蚁群算法规划的路线图：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/e19c686ade1c44ef9f1549b7e68f22b1.png)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/88d24b7bd0244b6c9d527c396f516b79.png)
-之后是ACO函数，即为蚁群算法的核心算法代码，调用时调用antColonyOptimization接口即可，接口相关解释如下：
+自行下载，这里我对各别部分进行说明，其余地方注释详尽，自行查看即可 
+其中utils.py为可视化方法文件，主要打印程序运行时间、结果等文字，同时现实蚁群算法规划的路线图： 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/e19c686ade1c44ef9f1549b7e68f22b1.png) 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/88d24b7bd0244b6c9d527c396f516b79.png) 
+之后是ACO函数，即为蚁群算法的核心算法代码，调用时调用antColonyOptimization接口即可，接口相关解释如下： 
 ```python
 def antColonyOptimization(cityNum, coordinate, point, setting):
     """
